@@ -1,8 +1,7 @@
 #![allow(clippy::doc_markdown)]
-use warframe_macros::model;
 
 /// A Mission Type in Warframe
-#[model]
+#[derive(Debug, PartialEq, PartialOrd, Clone, Eq, Hash, derive_more::Display, serde::Deserialize)]
 pub enum MissionType {
     /// AncientRetribution
     #[serde(rename = "Ancient Retribution")]
@@ -104,6 +103,19 @@ pub enum MissionType {
     VoidCascade,
     /// Defection
     Defection,
-    /// Unknown
-    Unknown,
+    /// Void Armageddon
+    #[serde(rename = "Void Armageddon")]
+    VoidArmageddon,
+    /// Void Flood
+    #[serde(rename = "Void Flood")]
+    VoidFlood,
+    /// Legacyte Harvest
+    #[serde(rename = "Legacyte Harvest")]
+    LegacyteHarvest,
+    /// Infested Salvage
+    #[serde(rename = "Infested Salvage")]
+    InfestedSalvage,
+    /// An unrecognized mission type
+    #[serde(untagged)]
+    Unknown(String),
 }
