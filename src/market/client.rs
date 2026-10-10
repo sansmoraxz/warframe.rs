@@ -93,7 +93,7 @@ pub struct Client {
     #[cfg(feature = "market_cache")]
     #[builder(
         default = Cache::builder()
-            .time_to_live(Duration::from_secs(86400))
+            .time_to_live(Duration::from_hours(24))
             .max_capacity(12) // 1 for each language
             .build()
     )]
@@ -102,7 +102,7 @@ pub struct Client {
     #[cfg(feature = "market_cache")]
     #[builder(
         default = Cache::builder()
-            .time_to_live(Duration::from_secs(86400))
+            .time_to_live(Duration::from_hours(24))
             .max_capacity(7) // 1 for each slug category
             .build()
     )]
