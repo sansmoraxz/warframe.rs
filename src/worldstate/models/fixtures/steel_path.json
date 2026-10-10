@@ -1,11 +1,11 @@
 {
   "currentReward": {
-    "name": "Zaw Riven Mod",
+    "name": "Kitgun Riven Mod",
     "cost": 75
   },
-  "activation": "2025-09-15T00:00:00.000Z",
-  "expiry": "2025-09-21T23:59:59.000Z",
-  "remaining": "1d 10h 23m 58s",
+  "activation": "2026-09-28T00:00:00.000Z",
+  "expiry": "2026-10-04T23:59:59.000Z",
+  "remaining": "16h 47m 58s",
   "rotation": [
     {
       "name": "Umbra Forma Blueprint",
@@ -119,8 +119,8 @@
     }
   ],
   "incursions": {
-    "id": "spi:1758326400000",
-    "activation": "2025-09-20T00:00:00.000Z",
-    "expiry": "2025-09-20T23:59:59.000Z"
+    "id": "spi:1791072000000",
+    "activation": "2026-10-04T00:00:00.000Z",
+    "expiry": "2026-10-04T23:59:59.000Z"
   }
 }

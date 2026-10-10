@@ -8,20 +8,20 @@ pub struct FlashSale {
     /// The item being sold
     pub item: ItemStringWrapper,
 
+    /// The unique name of the item
+    pub unique_name: String,
+
     /// The discount of the Item
-    pub discount: i32,
+    pub discount: Option<i32>,
 
     /// The PLATINUM price of this item
-    pub premium_override: i32,
+    pub premium_override: Option<i32>,
 
     /// The CREDIT price of this item
-    pub regular_override: i32,
+    pub regular_override: Option<i32>,
 
-    /// Whether the item is popular or not
-    pub is_popular: Option<bool>,
-
-    /// Whether the item is featured or not
-    pub is_featured: Option<bool>,
+    /// Whether the item is shown in market
+    pub is_shown_in_market: Option<bool>,
 }
 
 #[cfg(test)]

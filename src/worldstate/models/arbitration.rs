@@ -42,6 +42,9 @@ where
     expiry(serde(deserialize_with = "deserialize_expiry")),
 )]
 pub struct Arbitration {
+    /// Unique identifier for the arbitration
+    pub id: Option<String>,
+
     /// The i18n of the node
     pub node: String,
 

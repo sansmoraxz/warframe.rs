@@ -1,32 +1,34 @@
 {
-  "id": "68c7537e41f5afad4589b03e",
-  "activation": "2025-09-15T00:00:00.000Z",
-  "expiry": "2025-09-22T00:00:00.000Z",
+  "id": "6ab9aa7e9b74836a49c1c5dc",
+  "activation": "2026-09-28T00:00:00.000Z",
+  "expiry": "2026-10-05T00:00:00.000Z",
   "rewardPool": "Archon Sortie Rewards",
   "variants": [],
   "missions": [
     {
-      "node": "Spear (Mars)",
-      "nodeKey": "Spear (Mars)",
-      "type": "Rescue",
-      "typeKey": "Rescue",
+      "node": "Arval (Mars)",
+      "nodeKey": "Arval (Mars)",
+      "type": "Extermination",
+      "typeKey": "Extermination",
       "nightmare": false,
       "archwingRequired": false,
       "isSharkwing": false,
       "advancedSpawners": [],
       "requiredItems": [],
+      "requiredItemUniqueNames": [],
       "levelAuras": []
     },
     {
-      "node": "Martialis (Mars)",
-      "nodeKey": "Martialis (Mars)",
-      "type": "Defense",
-      "typeKey": "Defense",
+      "node": "Augustus (Mars)",
+      "nodeKey": "Augustus (Mars)",
+      "type": "Disruption",
+      "typeKey": "Disruption",
       "nightmare": false,
       "archwingRequired": false,
       "isSharkwing": false,
       "advancedSpawners": [],
       "requiredItems": [],
+      "requiredItemUniqueNames": [],
       "levelAuras": []
     },
     {
@@ -39,6 +41,7 @@
       "isSharkwing": false,
       "advancedSpawners": [],
       "requiredItems": [],
+      "requiredItemUniqueNames": [],
       "levelAuras": []
     }
   ],

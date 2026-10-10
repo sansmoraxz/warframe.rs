@@ -19,24 +19,9 @@ pub struct ArchonHuntMission {
 
     /// The type of the mission
     pub type_key: MissionType,
-
-    /// Whether the mission requires an archwing
-    pub archwing_required: bool,
-
-    /// Whether the mission is a sharkwing mission
-    pub is_sharkwing: bool,
-
-    /// Any additional spawners
-    pub advanced_spawners: Vec<String>,
-
-    /// Items required to enter the mission
-    pub required_items: Vec<String>,
-
-    /// Affectors of this mission
-    pub level_auras: Vec<String>,
 }
 
-/// An alert in Warframe
+/// An Archon Hunt event
 #[model(endpoint = "/archonHunt", return_style = Object, timed)]
 pub struct ArchonHunt {
     /// ID of this event
@@ -49,7 +34,7 @@ pub struct ArchonHunt {
     pub reward_pool: String,
 
     /// The i18n of the faction you are up against
-    pub faction: String,
+    pub faction: Faction,
 
     /// The faction you are up against
     pub faction_key: Option<Faction>,

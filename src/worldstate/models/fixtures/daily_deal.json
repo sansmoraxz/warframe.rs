@@ -1,14 +1,14 @@
 [
-    {
-        "id": "KubrowEgg1758394800000",
-        "activation": "2025-09-19T17:00:00.000Z",
-        "expiry": "2025-09-20T19:00:00.000Z",
-        "item": "Kubrow Egg",
-        "uniqueName": "/Lotus/StoreItems/Types/Game/KubrowPet/Eggs/KubrowEgg",
-        "originalPrice": 10,
-        "salePrice": 4,
-        "total": 100,
-        "sold": 100,
-        "discount": 60
-    }
+  {
+    "id": "ChemComponent1791154800000",
+    "activation": "2026-10-03T21:00:00.000Z",
+    "expiry": "2026-10-04T23:00:00.000Z",
+    "item": "Detonite Injector",
+    "uniqueName": "/Lotus/StoreItems/Types/Items/Research/ChemComponent",
+    "originalPrice": 10,
+    "salePrice": 6,
+    "total": 100,
+    "sold": 100,
+    "discount": 40
+  }
 ]

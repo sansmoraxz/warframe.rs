@@ -1,6 +1,9 @@
 use warframe_macros::model;
 
-use super::faction::Faction;
+use super::{
+    faction::Faction,
+    mission_type::MissionType,
+};
 
 /// A Mission corresponding to a Sortie
 #[model]
@@ -8,15 +11,20 @@ pub struct SortieMission {
     /// The i18n Mission type of this mission
     pub mission_type: String,
 
+    /// The type of the mission
+    pub mission_type_key: MissionType,
+
     /// The Modifier of this mission (e.g. Augmented Enemy Armor)
     pub modifier: String,
 
-    /// The description of the modifier of this mission (e.g. Enemies have Improved/Added armor.
-    /// Corrosive Projection effects are halved.)
+    /// The description of the modifier of this mission
     pub modifier_description: String,
 
-    /// The i18n of the name
+    /// The i18n of the node
     pub node: String,
+
+    /// The name of the node
+    pub node_key: String,
 }
 
 /// Data about the missions for the current sortie
@@ -30,6 +38,12 @@ pub struct Sortie {
 
     /// The faction you are up against
     pub faction: Faction,
+
+    /// The key of the faction
+    pub faction_key: Option<Faction>,
+
+    /// The reward pool for this sortie
+    pub reward_pool: Option<String>,
 
     /// The 3 missions corresponding to this sortie
     #[serde(rename = "variants")]
