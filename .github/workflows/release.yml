@@ -39,18 +39,17 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+      issues: write
     needs:
       - get-next-version
       - commitlint
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-          # checkout as wfcd-bot-boi
-          token: ${{ secrets.GH_TOKEN }}
-
       - name: Install semantic-release-cargo
         if: needs.get-next-version.outputs.new-release-published == 'true'
         uses: EricCrosson/install-github-release-binary@v2
@@ -80,8 +79,6 @@ jobs:
         uses: cycjimmy/semantic-release-action@v3.2.0
         if: needs.get-next-version.outputs.new-release-published == 'true'
         env:
-          # push as wfcd-bot-boi
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
         with:
           semantic_version: 18
