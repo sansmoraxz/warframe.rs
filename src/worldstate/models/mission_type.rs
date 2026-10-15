@@ -101,6 +101,9 @@ pub enum MissionType {
     /// VoidCascade
     #[serde(rename = "Void Cascade")]
     VoidCascade,
+    /// Void Flood
+    #[serde(rename = "Void Flood")]
+    VoidFlood,
     /// Defection
     Defection,
     /// Void Armageddon
