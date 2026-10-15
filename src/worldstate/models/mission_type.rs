@@ -109,9 +109,6 @@ pub enum MissionType {
     /// Void Armageddon
     #[serde(rename = "Void Armageddon")]
     VoidArmageddon,
-    /// Void Flood
-    #[serde(rename = "Void Flood")]
-    VoidFlood,
     /// Legacyte Harvest
     #[serde(rename = "Legacyte Harvest")]
     LegacyteHarvest,

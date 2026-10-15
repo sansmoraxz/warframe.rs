@@ -36,9 +36,6 @@ pub struct ZarimanCycle {
     /// Unique identifier for the cycle
     pub id: String,
 
-    /// Whether the Corpus are in control
-    pub is_corpus: bool,
-
     /// The current controlling faction
     pub state: ZarimanFaction,
 }
