@@ -10,6 +10,7 @@ use syn::{
     spanned::Spanned,
 };
 
+/// Parses and transforms a model enum, adding standard derives and serde deserialization.
 pub fn parse_enum(_args: TokenStream, mut item: ItemEnum) -> syn::Result<TokenStream> {
     // this is here to be able to have the derives at the very top
     let mut vdq = VecDeque::from(item.attrs.clone());

@@ -140,11 +140,13 @@ impl ItemStringWrapper {
         client.query_item_using_lang(&self.0, language).await
     }
 
+    /// Returns a reference to the inner item name string.
     #[must_use]
     pub fn inner(&self) -> &str {
         &self.0
     }
 
+    /// Consumes the wrapper and returns the inner item name string.
     #[must_use]
     pub fn into_inner(self) -> String {
         self.0

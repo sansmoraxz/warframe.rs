@@ -156,6 +156,7 @@ impl<'de> serde::Deserialize<'de> for Faction {
 }
 
 impl EnemyFaction {
+    /// Returns the damage types this enemy faction is vulnerable to.
     #[must_use]
     pub fn vulnerable_to(&self) -> Vec<DamageType> {
         use CombinedElementalDamage::{
@@ -200,6 +201,7 @@ impl EnemyFaction {
         }
     }
 
+    /// Returns the damage type this enemy faction is resistant to, if any.
     #[must_use]
     pub fn resistant_to(&self) -> Option<DamageType> {
         use CombinedElementalDamage::{

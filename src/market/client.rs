@@ -116,6 +116,7 @@ impl Default for Client {
 }
 
 impl Client {
+    /// Creates a new market API client with default settings.
     #[must_use]
     #[allow(clippy::missing_panics_doc)]
     pub fn new() -> Self {
@@ -124,6 +125,7 @@ impl Client {
             .expect("default client builder should never fail")
     }
 
+    /// Returns a new [`ClientBuilder`] for configuring a market API client.
     #[must_use]
     pub fn builder() -> ClientBuilder {
         ClientBuilder::default()
