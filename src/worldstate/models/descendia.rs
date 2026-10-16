@@ -159,31 +159,47 @@ pub enum DescentChallengeType {
     Unknown(String),
 }
 
+/// A named item reference used in Descendia challenges
 #[model]
 pub struct DescendiaNamedItem {
+    /// The internal unique name of the item
     pub unique_name: String,
+    /// The display name of the item
     pub name: String,
 }
 
+/// A challenge within a Descendia rotation
 #[model]
 pub struct DescendiaChallenge {
+    /// The position of this challenge in the rotation
     pub index: i32,
+    /// The i18n mission type
     #[serde(rename = "type")]
     pub challenge_type: String,
+    /// The mission type key
     pub type_key: DescentMissionType,
+    /// The i18n challenge name
     pub challenge: String,
+    /// The challenge type key
     pub challenge_key: DescentChallengeType,
+    /// The i18n level/node name
     pub level: String,
+    /// The internal unique name of the level
     pub level_unique_name: String,
+    /// The Warframe specializations available for this challenge
     pub specs: Vec<DescendiaNamedItem>,
+    /// The auras available for this challenge
     pub auras: Vec<DescendiaNamedItem>,
 }
 
 /// The current Descendia (Circuit of Heroes) rotation
 #[model(endpoint = "/descendia", return_style = Object, timed)]
 pub struct Descendia {
+    /// Unique identifier for this rotation
     pub id: String,
+    /// The seed used to generate this rotation
     pub seed: u64,
+    /// The challenges in this rotation
     pub challenges: Vec<DescendiaChallenge>,
 }
 
