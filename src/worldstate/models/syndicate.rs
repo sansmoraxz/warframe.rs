@@ -3,7 +3,17 @@
 use super::faction::SyndicateFaction;
 
 /// A Syndicate in Warframe, with fallback for unrecognized syndicate keys
-#[derive(Debug, PartialEq, PartialOrd, Clone, Eq, Hash, derive_more::Display, derive_more::From, derive_more::TryInto)]
+#[derive(
+    Debug,
+    PartialEq,
+    PartialOrd,
+    Clone,
+    Eq,
+    Hash,
+    derive_more::Display,
+    derive_more::From,
+    derive_more::TryInto,
+)]
 pub enum Syndicate {
     /// A known syndicate
     Known(SyndicateFaction),
@@ -16,8 +26,8 @@ impl<'de> serde::Deserialize<'de> for Syndicate {
     where
         D: serde::Deserializer<'de>,
     {
-        let value = serde_json::Value::deserialize(deserializer)
-            .map_err(serde::de::Error::custom)?;
+        let value =
+            serde_json::Value::deserialize(deserializer).map_err(serde::de::Error::custom)?;
 
         if let Ok(v) = SyndicateFaction::deserialize(&value) {
             return Ok(Syndicate::Known(v));

@@ -82,6 +82,7 @@ pub use models::{
         ArchimedeaMission,
         ArchimedeaModifier,
         ArchimedeaRisk,
+        ArchimedeaType,
     },
     archon_hunt::ArchonHuntMission,
     base::{
@@ -99,6 +100,7 @@ pub use models::{
     cambion_drift::CambionDriftState,
     cetus::CetusState,
     clan_weekly_initiative::ClanWeeklyReward,
+    conclave_challenge::ConclaveChallengeCategory,
     damage_type::{
         CombinedElementalDamage,
         DamageType,
@@ -108,8 +110,13 @@ pub use models::{
     descendia::{
         DescendiaChallenge,
         DescendiaNamedItem,
+        DescentChallengeType,
+        DescentMissionType,
     },
-    duviri_cycle::DuviriChoice,
+    duviri_cycle::{
+        DuviriChoice,
+        DuviriChoiceCategory,
+    },
     faction::{
         EnemyFaction,
         Faction,

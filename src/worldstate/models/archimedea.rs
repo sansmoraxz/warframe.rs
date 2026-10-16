@@ -3,6 +3,22 @@ use warframe_macros::model;
 use super::faction::Faction;
 use crate::worldstate::MissionType;
 
+/// The type of an Archimedea challenge rotation
+#[derive(
+    Debug, PartialEq, PartialOrd, Clone, Eq, Hash, derive_more::Display, serde::Deserialize,
+)]
+pub enum ArchimedeaType {
+    /// Circuit Lab
+    #[serde(rename = "C T_ L A B")]
+    Lab,
+    /// Circuit Hex
+    #[serde(rename = "C T_ H E X")]
+    Hex,
+    /// An unrecognized Archimedea type
+    #[serde(untagged)]
+    Unknown(String),
+}
+
 #[model]
 pub struct ArchimedeaModifier {
     pub key: String,
@@ -20,7 +36,9 @@ pub struct ArchimedeaRisk {
 
 #[model]
 pub struct ArchimedeaMission {
-    pub faction: Faction,
+    /// The i18n faction you are up against
+    pub faction: String,
+    /// The faction you are up against
     pub faction_key: Faction,
     pub mission_type: String,
     pub mission_type_key: MissionType,
@@ -33,7 +51,7 @@ pub struct Archimedea {
     pub id: String,
     #[serde(rename = "type")]
     pub archimedea_type: String,
-    pub type_key: String,
+    pub type_key: ArchimedeaType,
     pub missions: Vec<ArchimedeaMission>,
     pub personal_modifiers: Vec<ArchimedeaModifier>,
 }

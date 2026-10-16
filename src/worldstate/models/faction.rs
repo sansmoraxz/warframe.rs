@@ -116,7 +116,14 @@ pub enum TennoFaction {
 
 /// A faction in Warframe, encompassing enemy factions, syndicates, and Tenno-aligned groups
 #[derive(
-    Debug, PartialEq, PartialOrd, Clone, Eq, Hash, derive_more::Display, derive_more::From,
+    Debug,
+    PartialEq,
+    PartialOrd,
+    Clone,
+    Eq,
+    Hash,
+    derive_more::Display,
+    derive_more::From,
     derive_more::TryInto,
 )]
 pub enum Faction {
@@ -135,8 +142,8 @@ impl<'de> serde::Deserialize<'de> for Faction {
     where
         D: serde::Deserializer<'de>,
     {
-        let value = serde_json::Value::deserialize(deserializer)
-            .map_err(serde::de::Error::custom)?;
+        let value =
+            serde_json::Value::deserialize(deserializer).map_err(serde::de::Error::custom)?;
 
         if let Ok(v) = EnemyFaction::deserialize(&value) {
             return Ok(Faction::Enemy(v));

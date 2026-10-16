@@ -1,7 +1,9 @@
 #![allow(clippy::doc_markdown)]
 
 /// A Mission Type in Warframe
-#[derive(Debug, PartialEq, PartialOrd, Clone, Eq, Hash, derive_more::Display, serde::Deserialize)]
+#[derive(
+    Debug, PartialEq, PartialOrd, Clone, Eq, Hash, derive_more::Display, serde::Deserialize,
+)]
 pub enum MissionType {
     /// AncientRetribution
     #[serde(rename = "Ancient Retribution")]

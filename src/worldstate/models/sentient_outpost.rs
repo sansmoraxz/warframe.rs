@@ -1,15 +1,13 @@
 use warframe_macros::model;
 
-use super::faction::Faction;
-
 /// Mission information for a Sentient Outpost
 #[model]
 pub struct SentientOutpostMission {
     /// The i18n of the node
     pub node: String,
 
-    /// The faction present
-    pub faction: Faction,
+    /// The i18n of the faction
+    pub faction: String,
 
     /// The mission type
     #[serde(rename = "type")]

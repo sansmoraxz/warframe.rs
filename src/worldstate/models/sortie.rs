@@ -36,8 +36,8 @@ pub struct Sortie {
     /// The name of the boss
     pub boss: String,
 
-    /// The faction you are up against
-    pub faction: Faction,
+    /// The i18n of the faction you are up against
+    pub faction: String,
 
     /// The key of the faction
     pub faction_key: Option<Faction>,

@@ -1,5 +1,4 @@
 use serde::Deserialize;
-
 use warframe_macros::model;
 
 macro_rules! unordered_pattern {
@@ -9,7 +8,9 @@ macro_rules! unordered_pattern {
 }
 
 /// A damage type in Warframe
-#[derive(Clone, Debug, PartialEq, Eq, derive_more::From, derive_more::TryInto, Hash, derive_more::Display)]
+#[derive(
+    Clone, Debug, PartialEq, Eq, derive_more::From, derive_more::TryInto, Hash, derive_more::Display,
+)]
 pub enum DamageType {
     /// Physical Damage
     Physical(PhysicalDamage),
@@ -26,8 +27,8 @@ impl<'de> Deserialize<'de> for DamageType {
     where
         D: serde::Deserializer<'de>,
     {
-        let value = serde_json::Value::deserialize(deserializer)
-            .map_err(serde::de::Error::custom)?;
+        let value =
+            serde_json::Value::deserialize(deserializer).map_err(serde::de::Error::custom)?;
 
         if let Ok(v) = PhysicalDamage::deserialize(&value) {
             return Ok(DamageType::Physical(v));

@@ -34,7 +34,7 @@ pub struct ArchonHunt {
     pub reward_pool: String,
 
     /// The i18n of the faction you are up against
-    pub faction: Faction,
+    pub faction: String,
 
     /// The faction you are up against
     pub faction_key: Option<Faction>,

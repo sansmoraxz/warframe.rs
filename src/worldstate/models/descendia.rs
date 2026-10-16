@@ -1,5 +1,164 @@
 use warframe_macros::model;
 
+/// The mission type key for a Descendia challenge
+#[derive(
+    Debug, PartialEq, PartialOrd, Clone, Eq, Hash, derive_more::Display, serde::Deserialize,
+)]
+pub enum DescentMissionType {
+    /// Assassination
+    Assassination,
+    /// Disruption
+    Disruption,
+    /// Extermination
+    Extermination,
+    /// Survival
+    Survival,
+    /// Circuit Hex
+    #[serde(rename = "C T_ H E X")]
+    CircuitHex,
+    /// Circuit Lab
+    #[serde(rename = "C T_ L A B")]
+    CircuitLab,
+    /// Alchemy
+    #[serde(rename = "DT_ALCHEMY")]
+    Alchemy,
+    /// Break Targets
+    #[serde(rename = "DT_BREAK_TARGETS")]
+    BreakTargets,
+    /// Capture
+    #[serde(rename = "DT_CAPTURE")]
+    Capture,
+    /// Collection
+    #[serde(rename = "DT_COLLECTION")]
+    Collection,
+    /// Defense
+    #[serde(rename = "DT_DEFENSE")]
+    Defense,
+    /// Excavation
+    #[serde(rename = "DT_EXCAVATION")]
+    Excavation,
+    /// Exterminate
+    #[serde(rename = "DT_EXTERMINATE")]
+    Exterminate,
+    /// Infested Salvage
+    #[serde(rename = "DT_INFESTED_SALVAGE")]
+    InfestedSalvage,
+    /// Interception
+    #[serde(rename = "DT_INTERCEPTION")]
+    Interception,
+    /// Loot Creatures
+    #[serde(rename = "DT_LOOT_CREATURES")]
+    LootCreatures,
+    /// Mimics
+    #[serde(rename = "DT_MIMICS")]
+    Mimics,
+    /// Netracells
+    #[serde(rename = "DT_NETRACELLS")]
+    Netracells,
+    /// Pressure Gauge
+    #[serde(rename = "DT_PRESURE_GAUGE")]
+    PressureGauge,
+    /// Protoframe
+    #[serde(rename = "DT_PROTOFRAME")]
+    Protoframe,
+    /// Race
+    #[serde(rename = "DT_RACE")]
+    Race,
+    /// Sabotage Defense
+    #[serde(rename = "DT_SABOTAGE_DEFENSE")]
+    SabotageDefense,
+    /// Sabotage Hive
+    #[serde(rename = "DT_SABOTAGE_HIVE")]
+    SabotageHive,
+    /// Shrine Defense
+    #[serde(rename = "DT_SHRINE_DEFENSE")]
+    ShrineDefense,
+    /// Unique
+    #[serde(rename = "DT_UNIQUE")]
+    Unique,
+    /// An unrecognized mission type
+    #[serde(untagged)]
+    Unknown(String),
+}
+
+/// The challenge type key for a Descendia challenge
+#[derive(
+    Debug, PartialEq, PartialOrd, Clone, Eq, Hash, derive_more::Display, serde::Deserialize,
+)]
+pub enum DescentChallengeType {
+    /// Arbitration Drones
+    ArbitrationDrones,
+    /// Basic Loot Creatures
+    BasicLootCreatures,
+    /// Basic Mimics
+    BasicMimics,
+    /// Basic Race
+    BasicRace,
+    /// Devil
+    Devil,
+    /// Escapist
+    Escapist,
+    /// Fiery Trail Rollers
+    FieryTrailRollers,
+    /// Fire Chain
+    FireChain,
+    /// Freeze In Shoot
+    FreezeInShoot,
+    /// Giant Realm
+    GiantRealm,
+    /// Glass Maker
+    GlassMaker,
+    /// Hard Shell
+    HardShell,
+    /// Harrow
+    Harrow,
+    /// Head Shots Only
+    HeadShotsOnly,
+    /// Heavy Weapons Only
+    HeavyWeaponsOnly,
+    /// Jump Smash
+    JumpSmash,
+    /// Manics
+    Manics,
+    /// Netracell Darkness
+    #[serde(rename = "NC_Darkness")]
+    NetracellDarkness,
+    /// Netracell Mine Field
+    #[serde(rename = "NC_MineField")]
+    NetracellMineField,
+    /// Netracell Security Spin
+    #[serde(rename = "NC_SecuritySpin")]
+    NetracellSecuritySpin,
+    /// Netracell Spike Ceiling
+    #[serde(rename = "NC_SpikeCeiling")]
+    NetracellSpikeCeiling,
+    /// Poison Gas
+    PoisonGas,
+    /// Power House
+    PowerHouse,
+    /// Race Horse
+    RaceHorse,
+    /// Rockets Only
+    RocketsOnly,
+    /// Security Spin
+    SecuritySpin,
+    /// Slip and Slide
+    SlipAndSlide,
+    /// Spicy Knife
+    SpicyKnife,
+    /// Spike Ceiling
+    SpikeCeiling,
+    /// Toxic Fire
+    ToxicFire,
+    /// Void Aberration
+    VoidAberration,
+    /// Wisp
+    Wisp,
+    /// An unrecognized challenge type
+    #[serde(untagged)]
+    Unknown(String),
+}
+
 #[model]
 pub struct DescendiaNamedItem {
     pub unique_name: String,
@@ -11,9 +170,9 @@ pub struct DescendiaChallenge {
     pub index: i32,
     #[serde(rename = "type")]
     pub challenge_type: String,
-    pub type_key: String,
+    pub type_key: DescentMissionType,
     pub challenge: String,
-    pub challenge_key: String,
+    pub challenge_key: DescentChallengeType,
     pub level: String,
     pub level_unique_name: String,
     pub specs: Vec<DescendiaNamedItem>,

@@ -1,5 +1,21 @@
 use warframe_macros::model;
 
+/// The difficulty category for a Duviri cycle choice
+#[derive(
+    Debug, PartialEq, PartialOrd, Clone, Eq, Hash, derive_more::Display, serde::Deserialize,
+)]
+pub enum DuviriChoiceCategory {
+    /// Normal difficulty
+    #[serde(rename = "EXC_NORMAL")]
+    Normal,
+    /// Hard difficulty
+    #[serde(rename = "EXC_HARD")]
+    Hard,
+    /// An unrecognized category
+    #[serde(untagged)]
+    Unknown(String),
+}
+
 /// A choice category in the Duviri cycle
 #[model]
 pub struct DuviriChoice {
@@ -7,7 +23,7 @@ pub struct DuviriChoice {
     pub category: String,
 
     /// The category key
-    pub category_key: String,
+    pub category_key: DuviriChoiceCategory,
 
     /// The available choices (Warframes or Weapons)
     pub choices: Vec<String>,

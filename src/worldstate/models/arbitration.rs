@@ -53,7 +53,7 @@ pub struct Arbitration {
 
     /// The i18n faction you are up against
     #[serde(rename(deserialize = "enemy"))]
-    pub faction: Faction,
+    pub faction: String,
 
     /// The faction you are up against
     #[serde(rename(deserialize = "enemyKey"))]
