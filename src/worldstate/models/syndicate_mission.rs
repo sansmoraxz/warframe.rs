@@ -67,10 +67,10 @@ mod test_syndicate_mission {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/syndicate_mission.json")]
+        #[files("src/worldstate/models/fixtures/*/syndicate_mission.json")]
         #[mode = str]
-        syndicate_mission_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(syndicate_mission_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

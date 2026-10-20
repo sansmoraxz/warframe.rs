@@ -58,10 +58,10 @@ mod test_conclave_challenge {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/conclave_challenge.json")]
+        #[files("src/worldstate/models/fixtures/*/conclave_challenge.json")]
         #[mode = str]
-        conclave_challenge_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(conclave_challenge_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

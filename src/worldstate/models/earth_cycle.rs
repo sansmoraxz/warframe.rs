@@ -35,10 +35,10 @@ mod test_earth_cycle {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/earth_cycle.json")]
+        #[files("src/worldstate/models/fixtures/*/earth_cycle.json")]
         #[mode = str]
-        earth_cycle_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(earth_cycle_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

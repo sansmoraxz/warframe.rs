@@ -304,12 +304,7 @@ impl Client {
         self.cached_item(language, query, async move || {
             Item::query(
                 self.http.clone(),
-                format!(
-                    "{}/items/{}/?language={}",
-                    self.base_url,
-                    urlencoding::encode(query),
-                    language
-                ),
+                format!("{}/{language}/items/{}", self.base_url, urlencoding::encode(query)),
             )
             .await
         })

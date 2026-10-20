@@ -215,10 +215,10 @@ mod test_descendia {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/descendia.json")]
+        #[files("src/worldstate/models/fixtures/*/descendia.json")]
         #[mode = str]
-        descendia_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(descendia_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

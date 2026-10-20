@@ -88,10 +88,10 @@ mod test_archimedea {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/archimedea.json")]
+        #[files("src/worldstate/models/fixtures/*/archimedea.json")]
         #[mode = str]
-        archimedea_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(archimedea_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

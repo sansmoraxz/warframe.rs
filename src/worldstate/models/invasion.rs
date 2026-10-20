@@ -74,10 +74,10 @@ mod test_invasion {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/invasion.json")]
+        #[files("src/worldstate/models/fixtures/*/invasion.json")]
         #[mode = str]
-        invasion_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(invasion_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

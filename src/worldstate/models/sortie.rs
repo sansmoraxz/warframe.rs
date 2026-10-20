@@ -62,10 +62,10 @@ mod test_sortie {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/sortie.json")]
+        #[files("src/worldstate/models/fixtures/*/sortie.json")]
         #[mode = str]
-        sortie_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(sortie_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

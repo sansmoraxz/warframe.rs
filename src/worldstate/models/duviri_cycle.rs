@@ -70,10 +70,10 @@ mod test_duviri_cycle {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/duviri_cycle.json")]
+        #[files("src/worldstate/models/fixtures/*/duviri_cycle.json")]
         #[mode = str]
-        duviri_cycle_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(duviri_cycle_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

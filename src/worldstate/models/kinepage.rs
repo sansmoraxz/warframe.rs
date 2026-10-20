@@ -33,10 +33,10 @@ mod test_kinepage {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/kinepage.json")]
+        #[files("src/worldstate/models/fixtures/*/kinepage.json")]
         #[mode = str]
-        kinepage_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(kinepage_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

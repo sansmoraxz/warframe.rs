@@ -36,10 +36,10 @@ mod test_flash_sale {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/flash_sale.json")]
+        #[files("src/worldstate/models/fixtures/*/flash_sale.json")]
         #[mode = str]
-        flash_sale_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(flash_sale_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

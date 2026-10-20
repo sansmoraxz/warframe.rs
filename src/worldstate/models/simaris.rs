@@ -22,10 +22,10 @@ mod test_simaris {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/simaris.json")]
+        #[files("src/worldstate/models/fixtures/*/simaris.json")]
         #[mode = str]
-        simaris_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(simaris_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

@@ -23,10 +23,10 @@ mod test_faceoff_bonus {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/faceoff_bonus.json")]
+        #[files("src/worldstate/models/fixtures/*/faceoff_bonus.json")]
         #[mode = str]
-        faceoff_bonus_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(faceoff_bonus_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

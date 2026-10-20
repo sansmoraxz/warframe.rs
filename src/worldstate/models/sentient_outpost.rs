@@ -39,10 +39,10 @@ mod test_sentient_outpost {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/sentient_outpost.json")]
+        #[files("src/worldstate/models/fixtures/*/sentient_outpost.json")]
         #[mode = str]
-        sentient_outpost_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(sentient_outpost_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

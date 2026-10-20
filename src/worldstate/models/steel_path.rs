@@ -53,10 +53,10 @@ mod test_steel_path {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/steel_path.json")]
+        #[files("src/worldstate/models/fixtures/*/steel_path.json")]
         #[mode = str]
-        steel_path_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(steel_path_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

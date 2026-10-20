@@ -115,10 +115,10 @@ mod test_event {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/event.json")]
+        #[files("src/worldstate/models/fixtures/*/event.json")]
         #[mode = str]
-        event_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(event_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

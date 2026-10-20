@@ -70,10 +70,10 @@ mod test_news {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/news.json")]
+        #[files("src/worldstate/models/fixtures/*/news.json")]
         #[mode = str]
-        news_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(news_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

@@ -52,10 +52,10 @@ mod test_zariman_cycle {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/zariman_cycle.json")]
+        #[files("src/worldstate/models/fixtures/*/zariman_cycle.json")]
         #[mode = str]
-        zariman_cycle_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(zariman_cycle_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

@@ -39,10 +39,10 @@ mod test_daily_deal {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/daily_deal.json")]
+        #[files("src/worldstate/models/fixtures/*/daily_deal.json")]
         #[mode = str]
-        daily_deal_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(daily_deal_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

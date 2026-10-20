@@ -31,10 +31,10 @@ mod test_global_upgrade {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/global_upgrade.json")]
+        #[files("src/worldstate/models/fixtures/*/global_upgrade.json")]
         #[mode = str]
-        global_upgrade_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(global_upgrade_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

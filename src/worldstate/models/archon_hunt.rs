@@ -55,10 +55,10 @@ mod test_archonhunt {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/archon_hunt.json")]
+        #[files("src/worldstate/models/fixtures/*/archon_hunt.json")]
         #[mode = str]
-        archon_hunt_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(archon_hunt_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

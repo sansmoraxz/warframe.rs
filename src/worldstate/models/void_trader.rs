@@ -56,10 +56,10 @@ mod test_void_trader {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/void_trader.json")]
+        #[files("src/worldstate/models/fixtures/*/void_trader.json")]
         #[mode = str]
-        void_trader_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(void_trader_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

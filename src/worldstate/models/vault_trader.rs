@@ -40,10 +40,10 @@ mod test_vault_trader {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/vault_trader.json")]
+        #[files("src/worldstate/models/fixtures/*/vault_trader.json")]
         #[mode = str]
-        vault_trader_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(vault_trader_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

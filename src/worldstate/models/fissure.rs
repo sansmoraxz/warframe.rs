@@ -74,10 +74,10 @@ mod test_fissure {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/fissure.json")]
+        #[files("src/worldstate/models/fixtures/*/fissure.json")]
         #[mode = str]
-        fissure_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(fissure_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

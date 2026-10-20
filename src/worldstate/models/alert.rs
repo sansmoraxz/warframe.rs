@@ -30,10 +30,10 @@ mod test_alert {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/alert.json")]
+        #[files("src/worldstate/models/fixtures/*/alert.json")]
         #[mode = str]
-        alert_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(alert_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

@@ -47,10 +47,10 @@ mod test_clan_weekly_initiative {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/clan_weekly_initiative.json")]
+        #[files("src/worldstate/models/fixtures/*/clan_weekly_initiative.json")]
         #[mode = str]
-        clan_weekly_initiative_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(clan_weekly_initiative_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

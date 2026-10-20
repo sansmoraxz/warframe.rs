@@ -94,10 +94,10 @@ mod test_arbitration {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/arbitration.json")]
+        #[files("src/worldstate/models/fixtures/*/arbitration.json")]
         #[mode = str]
-        arbitration_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(arbitration_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }

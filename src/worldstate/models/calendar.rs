@@ -95,10 +95,10 @@ mod test_calendar {
 
     #[rstest]
     fn test(
-        #[files("src/worldstate/models/fixtures/calendar.json")]
+        #[files("src/worldstate/models/fixtures/*/calendar.json")]
         #[mode = str]
-        calendar_en: &str,
+        fixture: &str,
     ) {
-        from_str::<R>(calendar_en).unwrap();
+        from_str::<R>(fixture).unwrap();
     }
 }
