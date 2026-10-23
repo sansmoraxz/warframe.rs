@@ -79,6 +79,7 @@ mod test_fissure {
         #[mode = str]
         fixture: &str,
     ) {
-        from_str::<R>(fixture).unwrap();
+        let parsed = from_str::<R>(fixture).unwrap();
+        println!("{parsed:#?}");
     }
 }

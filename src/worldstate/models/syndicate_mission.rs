@@ -71,6 +71,7 @@ mod test_syndicate_mission {
         #[mode = str]
         fixture: &str,
     ) {
-        from_str::<R>(fixture).unwrap();
+        let parsed = from_str::<R>(fixture).unwrap();
+        println!("{parsed:#?}");
     }
 }

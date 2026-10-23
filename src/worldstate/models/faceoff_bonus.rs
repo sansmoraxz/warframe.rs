@@ -27,6 +27,7 @@ mod test_faceoff_bonus {
         #[mode = str]
         fixture: &str,
     ) {
-        from_str::<R>(fixture).unwrap();
+        let parsed = from_str::<R>(fixture).unwrap();
+        println!("{parsed:#?}");
     }
 }
