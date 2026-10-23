@@ -49,11 +49,12 @@ pub struct Fissure {
     pub tier: Tier,
 
     /// The i18n name of the enemy
-    pub enemy: String,
+    #[serde(rename = "enemy")]
+    pub faction: String,
 
     /// The type of the enemy
     #[serde(rename = "enemyKey")]
-    pub faction: Faction,
+    pub faction_key: Faction,
 
     /// Whether the fissure is a storm
     pub is_storm: bool,
